@@ -6,6 +6,7 @@ const server = http.createServer((req, res) => {
   console.log({ req });
   console.log(req.url);
   const { pathname, query } = parse(req.url || "", true);
+  console.log({ query });
 
   handleRequest(req, res, pathname || "", query || {});
 });
