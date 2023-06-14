@@ -1,12 +1,7 @@
 import { postTodo, getTodos, deleteTodo } from "./controllers";
 import { IncomingMessage, ServerResponse } from "http";
 
-export const handleRequest = (
-  req: IncomingMessage,
-  res: ServerResponse,
-  path: string,
-  query: any
-) => {
+export const handleRequest = (req: any, res: any, path: string, query: any) => {
   if (path === "/todos" && req.method === "GET") {
     getTodos(req, res);
   } else if (path === "/todos" && req.method === "POST") {
