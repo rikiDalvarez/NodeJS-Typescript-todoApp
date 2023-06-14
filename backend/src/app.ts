@@ -2,7 +2,6 @@ import * as http from "http";
 import { parse } from "url";
 import { handleRequest } from "./routing";
 
-//create instance of server object
 const server = http.createServer((req, res) => {
   const { pathname, query } = parse(req.url || "", true);
   handleRequest(req, res, pathname || "", query || {});
