@@ -1,13 +1,10 @@
 import * as http from "http";
 import { parse } from "url";
-import { handleRequest } from "./controllers";
+import { handleRequest } from "./routing";
 
+//create instance of server object
 const server = http.createServer((req, res) => {
-  console.log({ req });
-  console.log(req.url);
   const { pathname, query } = parse(req.url || "", true);
-  console.log({ query });
-
   handleRequest(req, res, pathname || "", query || {});
 });
 

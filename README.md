@@ -1,6 +1,6 @@
 # todoApp
 
-Working with : nodejs, typescript, jest, body-parser, cors.
+Working with : nodejs, typescript, jest, body-parser, cors, ts-node.
 
 Nodejs-Typescript-todoApp
 
