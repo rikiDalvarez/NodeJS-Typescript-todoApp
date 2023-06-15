@@ -1,14 +1,15 @@
+import { textChangeRangeIsUnchanged } from "typescript";
 import { Todo } from "./todo";
 
 const todos: Todo[] = [];
 
-function getTodos(req, res) {
+function getTodos(req: any, res: any) {
   res.setHeader("Content-Type", "application/json");
   res.statusCode = 200;
   res.end(JSON.stringify(todos));
 }
 
-function postTodo(req, res) {
+function postTodo(req: any, res: any) {
   let body = "";
   req.on("data", (chunk) => {
     body += chunk;
@@ -22,8 +23,7 @@ function postTodo(req, res) {
   });
 }
 
-function deleteTodo(req, res, path) {
-  console.log("enter");
+function deleteTodo(req: any, res: any, path: string) {
   const todoId = path.split("/")[2];
   const index = todos.findIndex((todo) => todo.id === Number(todoId));
   console.log({ index });
